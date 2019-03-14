@@ -1,3 +1,165 @@
-body{
-  background:red
+/* .post-comments {
+  padding-bottom: 9px;
+  margin: 5px 0 5px;
 }
+
+.comments-nav {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5px;
+}
+
+.post-comments .comment-meta {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5px;
+}
+
+.post-comments .media {
+  border-left: 1px dotted #000;
+  border-bottom: 1px dotted #000;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.post-comments .media-heading {
+  font-size: 12px;
+  color: grey;
+}
+
+.post-comments .comment-meta a {
+  font-size: 12px;
+  color: grey;
+  font-weight: bolder;
+  margin-right: 5px;
+}
+ */
+ .bold{
+   font-weight: bold !important;
+ }
+ .page-title{
+   padding-top:15px;
+   padding-bottom:15px;
+    color:#59595b;
+ }
+ .togglable {
+    .text-aqua{
+      color: #40c8f4;
+    }
+    .text-green{
+      color: #8ab389;
+    }
+     .media{
+       .btn.btn-toggle{
+         display: inline !important;
+       }
+     }
+     .media-heading{
+        button{
+          display: inline !important;
+        }
+        h2.text{
+          span.glyphicon{
+            color: #3fc8f4;
+          }
+          font-size: 21px;
+          line-height: 0px;
+          padding:15px 0 3px 0;
+          line-height: 22px;
+        }
+        .pull-right{
+
+        }
+     }
+     .media-body{
+        .bill{
+          border: 1px solid #eaeaea;
+          border-radius: 7px;
+          padding: 15px 0;
+          @media only screen and (max-width: 1024px) {
+            padding: 5px 0;
+          }
+          min-height:55px;
+          margin-bottom: 15px;
+          position:relative;
+          &:before{
+            content: '';
+            width: 3.7%;
+            height: 2px;
+            background: #eaeaea;
+            position: absolute;
+            right: -3.7%;
+            bottom: 25.4px;
+          }
+          h4 {
+            font-weight: 600;
+            font-size: 17px;
+            line-height:20px;
+            @media only screen and (max-width: 1240px) {
+              font-size: 14px !important;
+              text-align: center;
+            }
+          }
+          h5 {
+            margin-top:4px;
+            @media only screen and (max-width: 1240px) {
+              text-align: center;
+              font-size: 14px !important;
+              line-height: 17px;
+              margin: 10px 0 !important;
+             }
+          }
+          button {
+            display: inline-block;
+            margin:0;
+            position: relative;
+            top:-5px;
+            @media only screen and (max-width: 1240px) {
+              top: 0px;
+              font-size: 14px !important;
+            }
+
+          }
+        }
+        .meeting-details {
+          min-height:30px;
+          overflow: auto;
+          margin:20px 5px;
+          .details{
+            font-size: 14px;
+            margin-top: 10px;
+            font-weight: bold;
+            white-space: nowrap;
+            @media only screen and (max-width: 999px) {
+              text-align: center;
+            }
+            .date {
+              font-weight: normal;
+              display: inline-block;
+              margin: 0 15px;
+            }
+          }
+          .actions {
+            text-align: center;
+            button{
+              display: inline-block;
+              margin:5px;
+              @media only screen and (max-width: 1355px) {
+                width: 100%;
+              }
+            }
+            .btn-action{
+              border-color:#eae8e9 !important;
+              color:#7f7f7f !important;
+              border-radius: 7px !important;
+            }
+          }
+        }
+     }
+     .translation{
+        font-size: 15px;
+        color: #40c8f4;
+     }
+     .media-left{
+        background: #dfdfdf;
+        padding: 1px;
+     }
+ }
