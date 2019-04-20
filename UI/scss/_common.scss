@@ -212,10 +212,34 @@ h1, h2, h3, h4, h5, h6 {
 	width: 100%;
 	overflow-y: scroll;
 }
+.weather{
+    background: url('../../images/sea.jpg') no-repeat;
+    background-size: cover;
+}
+.pray{
+    background: url('../../images/mosque.jpg') no-repeat;
+    background-size: cover;
+    .time{
+        border-bottom:1px solid #fff;
+        margin-bottom:0;
+        line-height: 0.8em;
+        span{
+            margin:6px 3px;
+            display: inline-block;
+        }
+        .timing{
+            font-family: sans-serif;
+            width:43%;
+        }
+    }
+}
+.sans{
+    font-family: sans-serif !important;
+}
 .document{
     border-bottom:1px solid #eaeaea;
     width: 96%;
-    background:url(/ui/images/download.svg) no-repeat;
+    background:url(../../images/download.svg) no-repeat;
     background-position: 1% -1px;
     padding:6px;
     background-size: 8%;
