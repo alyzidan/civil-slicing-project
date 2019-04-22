@@ -345,7 +345,7 @@ h1, h2, h3, h4, h5, h6 {
 .widget{
   border-radius: 10px;
   background-color: rgb(252, 252, 252);
-  box-shadow: 0px 3px 4.7px 0.3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 3.7px 0.3px rgba(0, 0, 0, 0.1);
   padding:30px 15px;
   min-height: 100px;
   overflow: hidden;
@@ -465,10 +465,13 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li,label{
     box-shadow: 0px 3px 4.7px 0.3px rgba(0, 0, 0, 0.1);
 }
 .main-color{
-    color:$primary-color;
+    color:$primary-color !important;
     &:hover{
         color:$primary-color !important;
     }
+}
+.brd-left{
+    border-left: 1px solid #eaeaea;
 }
 .image-circle{
     border-radius: 100%;
@@ -514,9 +517,16 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li,label{
       .left-menu-section{
           ul{
               text-align:left;
-              @include breakpoint(isMob){
+              @include breakpoint(isTabLR){
                 display: block;
                 text-align: center;
+            }
+            li{
+                a{
+                    @include breakpoint(isTabLR){
+                     font-size: 25px;
+                    }       
+                }
             }
           }
       }
@@ -524,13 +534,27 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li,label{
           @include breakpoint(isDesktop){
               text-align:right;
           }
+          ul {
+              @include breakpoint(isTabLR){
+                  text-align:center;
+              }
+          }
         li{
             &:before{
                 content:'|';
+                @include breakpoint(isTabLR){
+                    content:'';
+                } 
             }
             a {
                 color:$secondary-color !important;
                 font-size: 12px;
+                @include breakpoint(isTab){
+                    font-size: 10px;
+                }
+                @include breakpoint(isTabLR){
+                    font-size: 25px;
+                }
                   &:hover {
                       color:$primary-color !important;
                   }
@@ -740,9 +764,10 @@ div[class^="col-"]{
 .text-black{
     color:#000;
 }
-.btn-drop{
+.btn-drop {
     background: transparent;
     color: #fff;
+    padding-top:0;
     &:hover{
         color: #fff;
 
@@ -892,7 +917,7 @@ div[class^="col-"]{
  }
    .checkround{
     &:after {
-        left: 2px;
+       left: 2px;
        top: 2px;
        width: 12px;
        height: 12px;
@@ -940,7 +965,7 @@ div[class^="col-"]{
     display: block;
     position: relative;
     padding-left: 25px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     padding-right: 15px;
     cursor: pointer;
     font-size: 18px;
@@ -948,6 +973,8 @@ div[class^="col-"]{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 10px !important;
 }
 
 /* Hide the browser's default checkbox */
@@ -1084,11 +1111,33 @@ div[class^="col-"]{
     }
 
 }
+
+.logo-holder{
+    position: relative;
+    .shadow-mock{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 48px;
+        left: 0;
+        border-radius: 8px;  
+        box-shadow: 0px 4px 3.7px 0.3px rgba(0, 0, 0, 0.1);
+        @include breakpoint(isTab){
+            height:25px;
+        }
+    }
+}
+
 footer{
     padding:20px;
     background: $primary-color;
     a {
         padding:0 10px;
+        @include breakpoint(isTabLR){
+            font-size: 18px;
+            display: block;
+            text-align: center
+        }
     }  
 }
 @media (max-width: 991px) {
@@ -1128,3 +1177,10 @@ footer{
         overflow: hidden!important;
     }
 }
+.highlight {
+    border: 1px solid red;
+    font-weight: bold;
+    font-size: 45px;
+    background-color: #333333;
+    min-height:200px;
+ }

@@ -6022,7 +6022,7 @@ h1, h2, h3, h4, h5, h6 {
 .widget {
   border-radius: 10px;
   background-color: #fcfcfc;
-  box-shadow: 0px 3px 4.7px 0.3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 3.7px 0.3px rgba(0, 0, 0, 0.1);
   padding: 30px 15px;
   min-height: 100px;
   overflow: hidden;
@@ -6135,9 +6135,12 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
   box-shadow: 0px 3px 4.7px 0.3px rgba(0, 0, 0, 0.1); }
 
 .main-color {
-  color: #bd9d50; }
+  color: #bd9d50 !important; }
   .main-color:hover {
     color: #bd9d50 !important; }
+
+.brd-left {
+  border-left: 1px solid #eaeaea; }
 
 .image-circle {
   border-radius: 100%; }
@@ -6174,20 +6177,42 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
   #navbar-primary .navbar-nav .left-menu-section ul {
     text-align: left;
     /************************ Laptop ************************/ }
-    @media (max-width: 736px) {
+    @media (max-width: 815px) {
       #navbar-primary .navbar-nav .left-menu-section ul {
         display: block;
         text-align: center; } }
+    #navbar-primary .navbar-nav .left-menu-section ul li a {
+      /************************ Laptop ************************/ }
+      @media (max-width: 815px) {
+        #navbar-primary .navbar-nav .left-menu-section ul li a {
+          font-size: 25px; } }
   #navbar-primary .navbar-nav .right-menu-section {
     /************************ Laptop ************************/ }
     @media (max-width: 2920px) {
       #navbar-primary .navbar-nav .right-menu-section {
         text-align: right; } }
+    #navbar-primary .navbar-nav .right-menu-section ul {
+      /************************ Laptop ************************/ }
+      @media (max-width: 815px) {
+        #navbar-primary .navbar-nav .right-menu-section ul {
+          text-align: center; } }
     #navbar-primary .navbar-nav .right-menu-section li:before {
-      content: '|'; }
+      content: '|';
+      /************************ Laptop ************************/ }
+      @media (max-width: 815px) {
+        #navbar-primary .navbar-nav .right-menu-section li:before {
+          content: ''; } }
     #navbar-primary .navbar-nav .right-menu-section li a {
       color: #4d4d4c !important;
-      font-size: 12px; }
+      font-size: 12px;
+      /************************ Laptop ************************/
+      /************************ Laptop ************************/ }
+      @media (max-width: 1024px) {
+        #navbar-primary .navbar-nav .right-menu-section li a {
+          font-size: 10px; } }
+      @media (max-width: 815px) {
+        #navbar-primary .navbar-nav .right-menu-section li a {
+          font-size: 25px; } }
       #navbar-primary .navbar-nav .right-menu-section li a:hover {
         color: #bd9d50 !important; }
       #navbar-primary .navbar-nav .right-menu-section li a.active {
@@ -6350,7 +6375,8 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
 
 .btn-drop {
   background: transparent;
-  color: #fff; }
+  color: #fff;
+  padding-top: 0; }
   .btn-drop:hover {
     color: #fff; }
 
@@ -6507,14 +6533,16 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
   display: block;
   position: relative;
   padding-left: 25px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   padding-right: 15px;
   cursor: pointer;
   font-size: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px !important; }
 
 /* Hide the browser's default checkbox */
 .check input {
@@ -6628,11 +6656,32 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
   #myModal .modal-dialog .modal-body {
     min-height: 200px; }
 
+.logo-holder {
+  position: relative; }
+  .logo-holder .shadow-mock {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 48px;
+    left: 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 3.7px 0.3px rgba(0, 0, 0, 0.1);
+    /************************ Laptop ************************/ }
+    @media (max-width: 1024px) {
+      .logo-holder .shadow-mock {
+        height: 25px; } }
+
 footer {
   padding: 20px;
   background: #bd9d50; }
   footer a {
-    padding: 0 10px; }
+    padding: 0 10px;
+    /************************ Laptop ************************/ }
+    @media (max-width: 815px) {
+      footer a {
+        font-size: 18px;
+        display: block;
+        text-align: center; } }
 
 @media (max-width: 991px) {
   .navbar-header {
@@ -6669,6 +6718,13 @@ footer {
 
   .collapsing {
     overflow: hidden !important; } }
+.highlight {
+  border: 1px solid red;
+  font-weight: bold;
+  font-size: 45px;
+  background-color: #333333;
+  min-height: 200px; }
+
 /* .post-comments {
   padding-bottom: 9px;
   margin: 5px 0 5px;
