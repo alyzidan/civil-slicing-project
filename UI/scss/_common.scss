@@ -51,6 +51,11 @@ $thirdBGColor: thirdBGColor;
 
 	/************************ Laptop ************************/
 
+    @if $point == isDesktop {
+        @media (max-width: 2920px) { @content; }
+		//All
+    }
+
 	// General
     @if $point == isLaptop {
         @media (max-width: 1680px) { @content; }
@@ -157,6 +162,21 @@ $third-color : #7b8591;
     }
 }
 
+a {
+    color:#fff;
+    &:hover{
+        color:#fff;
+    }
+    &:focus{
+        color:#fff;
+    }
+    &:active{
+        color:#fff;
+    }
+    &:visited{
+        color:#fff;
+    }
+}
 button{
     outline:none;
     &:focus {
@@ -184,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
         width:20%;
         display: inline-block;
         position: relative;
-        top: -10px;
+        top: -25px;
         #{$right}: 75%;
         img{
             max-width: 100%;
@@ -237,22 +257,37 @@ h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif !important;
 }
 .document{
-    border-bottom:1px solid #eaeaea;
-    width: 96%;
-    background:url(../../images/download.svg) no-repeat;
+    border-bottom: 1px solid #eaeaea;
+    width: 99%;
+    background: url(../../images/download.svg) no-repeat;
     background-position: 1% -1px;
-    padding:6px;
-    background-size: 8%;
-
+    padding: 6px;
+    background-size: 30px;
+}
+.weather-widget {
+    .weather-widget-img{
+        text-align:center;
+    }
+    img {
+        @include breakpoint(isTabLR) {
+            max-width:100px;
+            display: inline-block;
+        }
+    }
 }
 #style-1::-webkit-scrollbar-track{
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	border-radius: 10px;
 	background-color: #F5F5F5;
 }
-#third-carousel{
+
+#third-carousel, #fourth-carousel{
     .carousel-inner{
         min-height:158px;
+        .item{
+            //max-height: 280px;
+            overflow: hidden;
+        }
     }
     .carousel-indicators {
         bottom: -10px;
@@ -265,6 +300,48 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 }
+.last-doubleSlider{
+    min-height:300px !important;
+    @include breakpoint(isTab){}
+    .carousel-indicators{
+        display: block;
+    }
+
+}
+#fourth-carousel {
+    .carousel-inner{
+        .item{
+            max-height: auto !important;
+        }
+    }
+    .carousel-indicators {
+        bottom: -37px;
+        li {
+            width: 50px;
+            height:4px;
+            background-color: #e5e5e5;
+            border:1px solid #000;
+        }
+        .active{
+            background-color:$primary-color;
+        }
+    }
+}
+
+.brd {
+    border:1px solid #eaeaea;
+    padding-top:20px;
+}
+.carousel-box {
+    padding-top:15px;
+    min-height: 200px;
+}
+.date-controles-carousel{
+    padding-top:15px;
+    span {
+        padding: 0 17px;
+    }
+}
 .widget{
   border-radius: 10px;
   background-color: rgb(252, 252, 252);
@@ -272,17 +349,23 @@ h1, h2, h3, h4, h5, h6 {
   padding:30px 15px;
   min-height: 100px;
   overflow: hidden;
+  position: relative;
   &.falt-pad{
-    padding:0;
-      
+    padding:0; 
   }  
   &.upper-widgets{
-      min-height:350px;
+      min-height:360px;
+      @include breakpoint(isDesktop){
+        min-height:430px
+      }
+      @include breakpoint(isLaptop){
+        min-height:390px
+      }
   }
 }
 .homeContent{
     min-height: 800px;
-    margin-top: 60px;
+    margin-top: 90px;
 }
 a , button{
     text-decoration: none;
@@ -296,11 +379,13 @@ a , button{
 li{
     list-style: none;
 }
-
+.overflow-fix{
+    overflow: auto;
+}
 svg{
     vertical-align: middle;
 }
-h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li{
+h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li,label{
     font-family: 'GE Flow';
 }
 .bold{
@@ -346,6 +431,9 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li{
 }
 .p2 {
     padding:15px;
+}
+.pb0{
+ padding-bottom:0;
 }
 
 .navbar{
@@ -433,25 +521,35 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li{
           }
       }
       .right-menu-section{
+          @include breakpoint(isDesktop){
+              text-align:right;
+          }
         li{
             &:before{
                 content:'|';
             }
             a {
                 color:$secondary-color !important;
-                font-size: 10px;
+                font-size: 12px;
                   &:hover {
                       color:$primary-color !important;
+                  }
+                  &.active{
+                    color:$primary-color !important;
                   }
               }
         }
       }
       .icon-nav-bar{
         max-width: 25px;        
+        @include breakpoint(isTabLR){
+            display: block;
+            margin:auto;
+        }
       }
       .responsive-logo{
           display: none;
-          @include breakpoint(isMob){
+          @include breakpoint(isTabLR){
             display: block;
             position: relative;
         }
@@ -466,7 +564,7 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li{
               padding: 20px;
               top: -35px;
               //box-shadow: 0px 3px 4.7px 0.3px rgba(0, 0, 0, 0.1);
-              @include breakpoint(isMob){
+              @include breakpoint(isTabLR){
                 display: none;
                 position: relative;
                 top: 0px;
@@ -489,11 +587,11 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li{
                     color:$secondary-color;
                   }
               }
-              
-              @include breakpoint(isMob){
+              @include breakpoint(isTabLR){
                 display:block
               }
               a {
+                  color:#000;
                   padding-right: 10px;
                   font-size: 12px;
                 }
@@ -506,10 +604,29 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li{
             min-height: 205px;
         }
         .carousel-indicators {
-           bottom: -110px;
-           left: 10px;
-           margin-left: 5px;
-           width: 100%;
+        //    bottom: -110px;
+        //    left: 10px;
+        //    margin-left: 5px;
+        //    width: 100%;
+        left: 10px;
+        margin-left: 5px;
+        width: 100%;
+        position: relative;
+        margin-top: 68px;
+        overflow: auto;
+
+        @include breakpoint(isLaptop){
+            margin-top: 13%;
+        }
+        @include breakpoint(isMob){
+            
+        }
+        @include breakpoint(isDesktop){
+            margin-top: 6%;
+            overflow: auto;
+            margin-bottom:0;
+        }
+
        }
          .carousel-indicators {
             li {
@@ -589,28 +706,49 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li{
     width: 20%;
     float: left;
     padding:7.5px;
+    @include breakpoint(isTabLR){
+        width: 50%;
+    }
     @include breakpoint(isMob){
         width: 100%;
     }
-    @include breakpoint(isTob){
-        width: 50%;
-    }
+}
+div[class^="col-"]{
+    
+}
+.logo{
+    overflow:visible !important;
 }
 .block{
     padding:20px 6px;
     height: 200px;
     border-radius: 8px;
+    @include breakpoint(isTab){
+        height: 270px;
+    }
     img{
         position: relative;
-        left:6px;
+        // left:6px;
     }
 }
 .block-grey{
     background: #616161;
 }
 .text-white{
-    color:#fff
+    color:#fff;
 }
+.text-black{
+    color:#000;
+}
+.btn-drop{
+    background: transparent;
+    color: #fff;
+    &:hover{
+        color: #fff;
+
+    }
+}
+
 .block-blue{
     background: #0aacdc;
 }
@@ -629,6 +767,7 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li{
 
 /* Month header */
 .month {
+    height:210px;
   ul {list-style-type: none;}
   padding: 15px;
   width: 45%;
@@ -677,7 +816,12 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li{
     text-align: center;
   }
 }
-
+.calendar-container{
+    overflow: auto;
+    box-shadow: 0px 3px 4.7px 0.3px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    background: #fff;
+}
 .icon {
     width: 12px;
     display: inline-block;
@@ -688,8 +832,10 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li{
     }
 }
 .sortable-me {
+    min-height: 225px;
     .widget {
-        min-height:200px;
+        min-height:210px;
+        
     }
 }
 .days {
@@ -698,7 +844,8 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li{
   margin: 0;
   float:#{$left};
   width: 55%;
-  height: 160px;
+  height: 168px;
+  
   border-bottom-#{$right}-radius: 8px;
   li {
     list-style-type: none;
@@ -720,4 +867,264 @@ h1,h2,h3,h4,h5,h5,h6,p,a,span,div,li{
         color:#fff;
       }
   }
+}
+
+// RADIO BUTTONS
+/* The radio */
+
+.radio {
+   display: block;
+   position: relative;
+   padding-#{$right}: 30px;
+   margin-bottom: 7px;
+   cursor: pointer;
+   font-size: 14px;
+   font-weight: normal;
+   padding-top:2px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+ }
+   .checkround{
+    &:after {
+        left: 2px;
+       top: 2px;
+       width: 12px;
+       height: 12px;
+       border-radius: 50%;
+       background:$primary-color;  
+    }
+   }
+}
+
+.checkround {
+   position: absolute;
+   top: 6px;
+   #{$right}: 0;
+   height: 18px;
+   width: 18px;
+   background-color: #fff ;
+   border-color:#000;
+   border-style:solid;
+   border-width:1px;
+    border-radius: 50%;
+&:after {
+    content: "";
+    position: absolute;
+    display: none;
+ }
+}
+
+
+/* When the radio button is checked, add a blue background */
+.radio input:checked ~ .checkround {
+   background-color: #fff;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+
+/* Show the indicator (dot/circle) when checked */
+.radio input:checked ~ .checkround:after {
+   display: block;
+}
+
+
+/* The check */
+.check {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    padding-right: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #fff ;
+    border-color: $primary-color;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+
+
+/* When the checkbox is checked, add a blue background */
+.check input:checked ~ .checkmark {
+    background-color: #fff  ;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.check input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.check .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid ;
+    border-color: $primary-color;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.cust-btn{
+	margin-bottom: 10px;
+	background-color: $primary-color;
+	border-width: 2px;
+	border-color: $primary-color;
+    color: #fff;
+    &:hover{
+        border-color: $primary-color;
+        background-color: #fff;
+        color: $primary-color;
+        border-radius: 20px;
+        transform-style: 2s;
+    }
+}
+
+
+
+/* Style the indicator (dot/circle) */
+.btn-civil-empty {
+    color: $primary-color;
+    border-color: $primary-color;
+    background: transparent;
+}
+.btn-civil-solid {
+    color: #fff;
+    border-color: $primary-color;
+    background: $primary-color;
+}
+
+.floater{
+    background: $primary-color;
+    position: fixed;
+    right: -4px;
+    top: 44%;
+    height: 110px;
+    padding: 10px;
+    border-radius: 5px;
+}
+#myModal{
+    top:130px;  
+    overflow: visible !important;
+    .modal-dialog {
+        .modal-header {
+            padding: 65px 50px 40px;
+            background: url(../../images/modal-banner.png);
+            .modal-header-logo {
+                position: absolute;
+                top: -100px;
+                left: 37%;
+                img {
+                    @include breakpoint(isMob){
+                       max-width: 90px;
+                    }
+                }
+                @include breakpoint(isMob){
+                    left: 31%;
+                }
+
+            }
+            .close{
+                margin-top: -2px;
+                position: absolute;
+                left: -19px;
+                top: -20px;
+                background: $primary-color;
+                border-radius: 120px;
+                padding: 7px 20px 12px;
+                font-size: 42px;
+                opacity: 1;
+                color: #fff;
+            }
+        }
+        .modal-body {
+            min-height: 200px;
+        }
+        .modal-footer {
+        }
+    }
+
+}
+footer{
+    padding:20px;
+    background: $primary-color;
+    a {
+        padding:0 10px;
+    }  
+}
+@media (max-width: 991px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
 }
