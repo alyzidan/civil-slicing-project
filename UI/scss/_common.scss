@@ -239,6 +239,20 @@ h1, h2, h3, h4, h5, h6 {
 .pray{
     background: url('../../images/mosque.jpg') no-repeat;
     background-size: cover;
+    overflow: hidden;
+    max-height: 210px;
+    .pray-times{
+        height: 400px;
+        position: relative;
+        padding-top: 40px;
+        top: -40px;
+        left: 10px;
+        background: #bd9d507a;
+        @include breakpoint(isMob) {
+            max-height:100px;
+            background:transparent;
+        }
+    }
     .time{
         border-bottom:1px solid #fff;
         margin-bottom:0;
@@ -320,7 +334,7 @@ h1, h2, h3, h4, h5, h6 {
             width: 50px;
             height:4px;
             background-color: #e5e5e5;
-            border:1px solid #000;
+            border-radius:0;
         }
         .active{
             background-color:$primary-color;
@@ -1184,3 +1198,9 @@ footer{
     background-color: #333333;
     min-height:200px;
  }
+ .portlet-placeholder {
+    border: 1px Solid #333;
+    margin: 0 1em 1em 0;
+    min-height: 200px;
+    border-radius: 7px;
+}
