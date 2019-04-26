@@ -5910,12 +5910,12 @@ h1, h2, h3, h4, h5, h6 {
     width: 20%;
     display: inline-block;
     position: relative;
-    top: -25px;
+    top: -34px;
     right: 75%; }
     .card-carousel .card-icon img {
       max-width: 100%; }
   .card-carousel .carousel-indicators {
-    bottom: 10px;
+    bottom: 16px;
     left: 34%; }
     .card-carousel .carousel-indicators li {
       background-color: #e2d5b6;
@@ -5933,6 +5933,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   overflow-y: scroll; }
 
+.ltr {
+  direction: ltr; }
+
 .weather {
   background: url("../../images/sea.jpg") no-repeat;
   background-size: cover; }
@@ -5941,7 +5944,21 @@ h1, h2, h3, h4, h5, h6 {
   background: url("../../images/mosque.jpg") no-repeat;
   background-size: cover;
   overflow: hidden;
-  max-height: 210px; }
+  max-height: 210px;
+  /************************ Laptop ************************/ }
+  @media (max-width: 736px) {
+    .pray {
+      min-height: 290px !important; } }
+  .pray .one-time-pary {
+    display: inline-block;
+    width: 25%; }
+  .pray .pray-data {
+    /************************ Laptop ************************/ }
+    @media (max-width: 736px) {
+      .pray .pray-data {
+        position: absolute;
+        bottom: 0;
+        width: 100%; } }
   .pray .pray-times {
     height: 400px;
     position: relative;
@@ -5952,12 +5969,25 @@ h1, h2, h3, h4, h5, h6 {
     /************************ Laptop ************************/ }
     @media (max-width: 736px) {
       .pray .pray-times {
+        padding-top: 20px;
         max-height: 100px;
-        background: transparent; } }
+        background: transparent;
+        top: 0;
+        left: 0; } }
+  .pray .single-times {
+    /************************ Laptop ************************/ }
+    @media (max-width: 815px) {
+      .pray .single-times {
+        clear: both;
+        padding-top: 10px; } }
   .pray .time {
     border-bottom: 1px solid #fff;
     margin-bottom: 0;
-    line-height: 0.8em; }
+    line-height: 0.8em;
+    /************************ Laptop ************************/ }
+    @media (max-width: 815px) {
+      .pray .time {
+        line-height: 0.4em; } }
     .pray .time span {
       margin: 6px 3px;
       display: inline-block; }
@@ -5991,7 +6021,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #F5F5F5; }
 
 #third-carousel .carousel-inner, #fourth-carousel .carousel-inner {
-  min-height: 158px; }
+  min-height: 124px; }
   #third-carousel .carousel-inner .item, #fourth-carousel .carousel-inner .item {
     overflow: hidden; }
 #third-carousel .carousel-indicators, #fourth-carousel .carousel-indicators {
@@ -6007,6 +6037,17 @@ h1, h2, h3, h4, h5, h6 {
   /************************ Laptop ************************/ }
   .last-doubleSlider .carousel-indicators {
     display: block; }
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  position: fixed;
+  top: 90px;
+  width: 400px;
+  left: 10px;
+  display: none; }
 
 #fourth-carousel .carousel-inner .item {
   max-height: auto !important; }
@@ -6038,9 +6079,9 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #fcfcfc;
   box-shadow: 0px 4px 3.7px 0.3px rgba(0, 0, 0, 0.1);
   padding: 30px 15px;
-  min-height: 100px;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  min-height: 100px; }
   .widget.falt-pad {
     padding: 0; }
   .widget.upper-widgets {
@@ -6159,7 +6200,8 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
 .image-circle {
   border-radius: 100%; }
   .image-circle.avatar {
-    max-width: 30% !important; }
+    max-width: 24% !important;
+    margin: 5px 0px 0px 16px; }
 
 .control-icons {
   padding: 15px 0; }
@@ -6193,10 +6235,14 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
     /************************ Laptop ************************/ }
     @media (max-width: 815px) {
       #navbar-primary .navbar-nav .left-menu-section ul {
-        display: block;
         text-align: center; } }
     #navbar-primary .navbar-nav .left-menu-section ul li a {
+      /************************ Laptop ************************/
+      font-size: 16px;
       /************************ Laptop ************************/ }
+      @media (max-width: 1680px) {
+        #navbar-primary .navbar-nav .left-menu-section ul li a {
+          font-size: 13px; } }
       @media (max-width: 815px) {
         #navbar-primary .navbar-nav .left-menu-section ul li a {
           font-size: 25px; } }
@@ -6218,9 +6264,13 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
           content: ''; } }
     #navbar-primary .navbar-nav .right-menu-section li a {
       color: #4d4d4c !important;
-      font-size: 12px;
+      font-size: 17px;
+      /************************ Laptop ************************/
       /************************ Laptop ************************/
       /************************ Laptop ************************/ }
+      @media (max-width: 1680px) {
+        #navbar-primary .navbar-nav .right-menu-section li a {
+          font-size: 13px; } }
       @media (max-width: 1024px) {
         #navbar-primary .navbar-nav .right-menu-section li a {
           font-size: 10px; } }
@@ -6237,7 +6287,19 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
     @media (max-width: 815px) {
       #navbar-primary .navbar-nav .icon-nav-bar {
         display: block;
-        margin: auto; } }
+        margin: auto;
+        max-width: 100%; } }
+    #navbar-primary .navbar-nav .icon-nav-bar .dropdown-menu {
+      -webkit-transition: all .4s ease-in-out;
+      -moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+      padding: 8px;
+      /************************ Laptop ************************/ }
+      @media (max-width: 815px) {
+        #navbar-primary .navbar-nav .icon-nav-bar .dropdown-menu {
+          position: relative !important;
+          box-shadow: none; } }
   #navbar-primary .navbar-nav .responsive-logo {
     display: none;
     /************************ Laptop ************************/ }
@@ -6367,16 +6429,34 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
 .logo {
   overflow: visible !important; }
 
+.block-text {
+  position: absolute;
+  bottom: 20px; }
+
 .block {
   padding: 20px 6px;
   height: 200px;
   border-radius: 8px;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
   /************************ Laptop ************************/ }
+  .block:hover {
+    box-shadow: 0px 3px 4.7px 2.3px rgba(0, 0, 0, 0.3); }
   @media (max-width: 1024px) {
     .block {
       height: 270px; } }
   .block img {
     position: relative; }
+  .block .widget-fifth-title {
+    font-size: 18px;
+    font-weight: bold; }
+    .block .widget-fifth-title * {
+      /************************ Laptop ************************/ }
+      @media (max-width: 736px) {
+        .block .widget-fifth-title * {
+          font-size: 25px; } }
 
 .block-grey {
   background: #616161; }
@@ -6385,7 +6465,8 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
   color: #fff; }
 
 .text-black {
-  color: #000; }
+  color: #000;
+  color: #959D9F; }
 
 .btn-drop {
   background: transparent;
@@ -6460,10 +6541,16 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
   .icon img {
     left: 0 !important; }
 
+.widget-title {
+  font-size: 18px !important;
+  font-weight: bold; }
+
 .sortable-me {
   min-height: 225px; }
   .sortable-me .widget {
     min-height: 210px; }
+  .sortable-me .ui-sortable-handle {
+    z-index: 999; }
 
 .days {
   padding: 10px 0;
@@ -6491,7 +6578,6 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
       border-radius: 100px;
       color: #fff; }
 
-/* The radio */
 .radio {
   display: block;
   position: relative;
@@ -6504,7 +6590,8 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  color: #8c949c; }
   .radio input {
     position: absolute;
     opacity: 0;
@@ -6635,14 +6722,16 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
   top: 44%;
   height: 110px;
   padding: 10px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  cursor: pointer; }
 
 #myModal {
   top: 130px;
   overflow: visible !important; }
   #myModal .modal-dialog .modal-header {
     padding: 65px 50px 40px;
-    background: url(../../images/modal-banner.png); }
+    background: url(../../images/modal-banner.png);
+    background-size: cover; }
     #myModal .modal-dialog .modal-header .modal-header-logo {
       position: absolute;
       top: -100px;
@@ -6668,7 +6757,8 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
       opacity: 1;
       color: #fff; }
   #myModal .modal-dialog .modal-body {
-    min-height: 200px; }
+    min-height: 200px;
+    margin-bottom: 30px; }
 
 .logo-holder {
   position: relative; }
@@ -6676,11 +6766,15 @@ h1, h2, h3, h4, h5, h5, h6, p, a, span, div, li, label {
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 48px;
+    height: 38%;
     left: 0;
     border-radius: 8px;
     box-shadow: 0px 4px 3.7px 0.3px rgba(0, 0, 0, 0.1);
+    /************************ Laptop ************************/
     /************************ Laptop ************************/ }
+    @media (max-width: 2920px) {
+      .logo-holder .shadow-mock {
+        height: 48%; } }
     @media (max-width: 1024px) {
       .logo-holder .shadow-mock {
         height: 25px; } }
@@ -6740,7 +6834,8 @@ footer {
   min-height: 200px; }
 
 .portlet-placeholder {
-  border: 1px Solid #333;
+  border: 1px dashed #aaa;
+  background: #fafafa;
   margin: 0 1em 1em 0;
   min-height: 200px;
   border-radius: 7px; }
