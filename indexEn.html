@@ -1268,7 +1268,9 @@
 		});
 		$('#reverse-delete-action').click(function(e){
 			e.preventDefault();
-			Closed_Panels[0].show('slow');
+			for (var i = 0; i < Closed_Panels.length; i++) {
+        Closed_Panels[i].show('slow')
+    }
 			$('.alert').hide('slow');
 		})
 
